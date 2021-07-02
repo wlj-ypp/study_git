@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Word</title>
+        <script src="./vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="inner"/>
+            <button v-on:click="submit1">提交</button>
+            <ul>
+                <li v-for="(item,key) in list" :key="key">
+                    {{item}}
+                </li> 
+            </ul>
+        </div>
+        <script>
+            //声明一个vue实例子
+            var app=new Vue({
+                el:'#app',//让vue实例接管app  div里的内容
+                data:{
+                    inner:'',
+                    list:[],
+                },
+                methods: {
+                    submit1() {
+                        this.list.push(this.inner)
+                    },
+                },
+            })
+    
+        </script>
+        
+    </body>
+</html>

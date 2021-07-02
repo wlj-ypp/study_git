@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Word</title>
+        <script src="./vue.js"></script>
+    </head>
+    <body>
+        <div id="app">{{inner}}
+        </div>
+        <!--原生js编写-->
+        <!--<script>
+            var dom=document.getElementById('app');
+            dom.innerHTML="hello word"
+        </script>-->
+        <!--vue编写-->
+        <script>
+            //声明一个vue实例子
+            var app=new Vue({
+                el:'#app',//让vue实例接管app  div里的内容
+                data:{
+                    inner:"hello word!"
+                }
+            })
+            setInterval(() => {
+                app.$data.inner="byte word"
+            }, 2000);
+        </script>
+        
+    </body>
+</html>
